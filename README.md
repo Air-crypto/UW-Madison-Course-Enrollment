@@ -32,7 +32,9 @@ __________________ Instructions __________________
 - Change courseNumsToWatch and lectureNumsToWatch to classes you want to watch
 - Run requirements.txt through terminal (pip3 install -r requirements.txt)
 - Run script through terminal (python3 courseEnrollment.py)
+
 ----- Following two are optional unless you want to run program for extended period of time to check when course opens ------
+
 - Prevent lock screen from turning on
 - run 'sudo pmset disablesleep 1' to prevent mac from sleeping
     - run 'sudo pmset disablesleep 0' to re-enable sleep when done
