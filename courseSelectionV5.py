@@ -51,6 +51,9 @@ from selenium.webdriver.common.keys import Keys
 #Login credentials:
 netID = "xxx"      #Replace [xxx]@wisc.edu with your netID
 password = ""               #Replace password with your MyUW password (the one associated with your NetID)
+SENDING_EMAIL_USERNAME = "xxx@gmail.com"
+SENDING_EMAIL_PASSWORD = "" # authentication code from google security settings
+RECIPIENT_EMAIL_ADDRESS = ""
 
 def initDriver (): #initialize chrome driver
     #uncomment below line and comment out the next 3 lines to run in non-headless mode (debugging purposes)
@@ -167,10 +170,6 @@ def shutdown (driver): #release chrome driver
     print("Chrome driver shutdown")
     
 def sendEmailAlert(alert_str):
-    SENDING_EMAIL_USERNAME = "xxx@gmail.com"
-    SENDING_EMAIL_PASSWORD = "" # authentication code from google security settings
-    RECIPIENT_EMAIL_ADDRESS = ""
-
     #Sends an email alert. The subject and body will be the same.
     yagmail.SMTP(SENDING_EMAIL_USERNAME, SENDING_EMAIL_PASSWORD).send(
         RECIPIENT_EMAIL_ADDRESS, alert_str, alert_str)
@@ -225,6 +224,21 @@ def checkAllCourses(driver, courseNumsToWatch, lectureNumsToWatch, previousResul
 
 
 ########### Call all functions above as needed ###########
+
+#Login credential inputs:
+netID = input("Enter your netID ([netID]@wisc.edu): ") #Replace [xxx]@wisc.edu with your netID
+password = input("Enter your netID password: ")        #Replace password with your MyUW password (the one associated with your NetID)
+SENDING_EMAIL_USERNAME = input("Enter the email you want to recieve course updates from (must be a gmail account): ")
+SENDING_EMAIL_PASSWORD = input("Enter your gmail authentication code from google security settings: ")
+RECIPIENT_EMAIL_ADDRESS = SENDING_EMAIL_USERNAME
+
+'''
+#Getting courses and sections to watch
+numCoursesToWatch = input("How many courses do you want to watch: ")
+
+for i in range (numCoursesToWatch):
+    currentCourse = ("What course do you want to add : ")
+'''
 
 #array elements must be paired with each other (indexes must correspond to each other)
 courseNumsToWatch = ["354", "400", "352"] #array of course nums to watch
