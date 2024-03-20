@@ -86,7 +86,7 @@ def login (driver): #login to course selection - still need to redirect to curre
 
     print("Logged in ... navigating to spring 2024 course selection cart ...")
 
-    driver.get("https://enroll.wisc.edu/my-courses?term=1244") # 1244 is the term code for Spring 2024 - change as needed
+    driver.get("https://enroll.wisc.edu/my-courses?term=1252") # 1252 is the term code for Spring 2024 - change as needed
     
     print("All set!")
 
